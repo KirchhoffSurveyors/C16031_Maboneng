@@ -21,7 +21,7 @@
             margin: 0;
         }
         </style>
-        <title>Maboneng Property Zoning</title>
+        <title>Maboneng Property and Zoning Register</title>
     </head>
     <body>
         <div id="map">
@@ -50,9 +50,9 @@
         });
         var map = L.map('map', {
             zoomControl:true, maxZoom:27, minZoom:1
-        }).fitBounds([[-26.2055026647,28.0534138425],[-26.1985692354,28.0635221755]]);
+        }).fitBounds([[-26.2055026647,28.0532270835],[-26.1985692354,28.0637089345]]);
         var hash = new L.Hash(map);
-        map.attributionControl.addAttribution('<a href="https://kirchoffsurveyors.co.za">Kirchhoff Professional Surveyors></a>,<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        map.attributionControl.addAttribution('<a href="https://kirchhoffsurveyors.co.za" target="_blank">Kirchhoff Professional Surveyors</a>,<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         L.control.locate().addTo(map);
         var measureControl = new L.Control.Measure({
             primaryLengthUnit: 'meters',
@@ -81,52 +81,68 @@
         function pop_MabonengERF0(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ogc_fid'] !== null ? Autolinker.link(String(feature.properties['ogc_fid'])) : '') + '</td>\
+                        <th scope="row">ogc_fid</th>\
+                        <td>' + (feature.properties['ogc_fid'] !== null ? Autolinker.link(String(feature.properties['ogc_fid'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Name/Scheme'] !== null ? Autolinker.link(String(feature.properties['Name/Scheme'])) : '') + '</td>\
+                        <th scope="row">Name/Scheme</th>\
+                        <td>' + (feature.properties['Name/Scheme'] !== null ? Autolinker.link(String(feature.properties['Name/Scheme'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Stand number/ERF'] !== null ? Autolinker.link(String(feature.properties['Stand number/ERF'])) : '') + '</td>\
+                        <th scope="row">Stand number/ERF</th>\
+                        <td>' + (feature.properties['Stand number/ERF'] !== null ? Autolinker.link(String(feature.properties['Stand number/ERF'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Area (SQM)'] !== null ? Autolinker.link(String(feature.properties['Area (SQM)'])) : '') + '</td>\
+                        <th scope="row">Area (SQM)</th>\
+                        <td>' + (feature.properties['Area (SQM)'] !== null ? Autolinker.link(String(feature.properties['Area (SQM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Township Name'] !== null ? Autolinker.link(String(feature.properties['Township Name'])) : '') + '</td>\
+                        <th scope="row">Township Name</th>\
+                        <td>' + (feature.properties['Township Name'] !== null ? Autolinker.link(String(feature.properties['Township Name'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Owner'] !== null ? Autolinker.link(String(feature.properties['Owner'])) : '') + '</td>\
+                        <th scope="row">Owner</th>\
+                        <td>' + (feature.properties['Owner'] !== null ? Autolinker.link(String(feature.properties['Owner'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Use zone'] !== null ? Autolinker.link(String(feature.properties['Use zone'])) : '') + '</td>\
+                        <th scope="row">Use zone</th>\
+                        <td>' + (feature.properties['Use zone'] !== null ? Autolinker.link(String(feature.properties['Use zone'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Height zone'] !== null ? Autolinker.link(String(feature.properties['Height zone'])) : '') + '</td>\
+                        <th scope="row">Height zone</th>\
+                        <td>' + (feature.properties['Height zone'] !== null ? Autolinker.link(String(feature.properties['Height zone'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['F.A.R Residential'] !== null ? Autolinker.link(String(feature.properties['F.A.R Residential'])) : '') + '</td>\
+                        <th scope="row">F.A.R Residential</th>\
+                        <td>' + (feature.properties['F.A.R Residential'] !== null ? Autolinker.link(String(feature.properties['F.A.R Residential'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['F.A.R Industrial'] !== null ? Autolinker.link(String(feature.properties['F.A.R Industrial'])) : '') + '</td>\
+                        <th scope="row">F.A.R Industrial</th>\
+                        <td>' + (feature.properties['F.A.R Industrial'] !== null ? Autolinker.link(String(feature.properties['F.A.R Industrial'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ResidentialBulk(SQM)'] !== null ? Autolinker.link(String(feature.properties['ResidentialBulk(SQM)'])) : '') + '</td>\
+                        <th scope="row">ResidentialBulk(SQM)</th>\
+                        <td>' + (feature.properties['ResidentialBulk(SQM)'] !== null ? Autolinker.link(String(feature.properties['ResidentialBulk(SQM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Industrial Bulk(SQM)'] !== null ? Autolinker.link(String(feature.properties['Industrial Bulk(SQM)'])) : '') + '</td>\
+                        <th scope="row">Industrial Bulk(SQM)</th>\
+                        <td>' + (feature.properties['Industrial Bulk(SQM)'] !== null ? Autolinker.link(String(feature.properties['Industrial Bulk(SQM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Coverage'] !== null ? Autolinker.link(String(feature.properties['Coverage'])) : '') + '</td>\
+                        <th scope="row">Coverage</th>\
+                        <td>' + (feature.properties['Coverage'] !== null ? Autolinker.link(String(feature.properties['Coverage'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Building line'] !== null ? Autolinker.link(String(feature.properties['Building line'])) : '') + '</td>\
+                        <th scope="row">Building line</th>\
+                        <td>' + (feature.properties['Building line'] !== null ? Autolinker.link(String(feature.properties['Building line'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['comment'] !== null ? Autolinker.link(String(feature.properties['comment'])) : '') + '</td>\
+                        <th scope="row">comment</th>\
+                        <td>' + (feature.properties['comment'] !== null ? Autolinker.link(String(feature.properties['comment'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent);
@@ -159,31 +175,40 @@
         function pop_MabonengSchemes1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
+                        <th scope="row">id</th>\
+                        <td>' + (feature.properties['id'] !== null ? Autolinker.link(String(feature.properties['id'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Name/Scheme'] !== null ? Autolinker.link(String(feature.properties['Name/Scheme'])) : '') + '</td>\
+                        <th scope="row">Name/Scheme</th>\
+                        <td>' + (feature.properties['Name/Scheme'] !== null ? Autolinker.link(String(feature.properties['Name/Scheme'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['ERF'] !== null ? Autolinker.link(String(feature.properties['ERF'])) : '') + '</td>\
+                        <th scope="row">ERF</th>\
+                        <td>' + (feature.properties['ERF'] !== null ? Autolinker.link(String(feature.properties['ERF'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Owners'] !== null ? Autolinker.link(String(feature.properties['Owners'])) : '') + '</td>\
+                        <th scope="row">Owners</th>\
+                        <td>' + (feature.properties['Owners'] !== null ? Autolinker.link(String(feature.properties['Owners'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Zoning'] !== null ? Autolinker.link(String(feature.properties['Zoning'])) : '') + '</td>\
+                        <th scope="row">Zoning</th>\
+                        <td>' + (feature.properties['Zoning'] !== null ? Autolinker.link(String(feature.properties['Zoning'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Total Area(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Area(SqM)'])) : '') + '</td>\
+                        <th scope="row">Total Area(SqM)</th>\
+                        <td>' + (feature.properties['Total Area(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Area(SqM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Total Industrial Bulk(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Industrial Bulk(SqM)'])) : '') + '</td>\
+                        <th scope="row">Total Industrial Bulk(SqM)</th>\
+                        <td>' + (feature.properties['Total Industrial Bulk(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Industrial Bulk(SqM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Total Residential Bulk(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Residential Bulk(SqM)'])) : '') + '</td>\
+                        <th scope="row">Total Residential Bulk(SqM)</th>\
+                        <td>' + (feature.properties['Total Residential Bulk(SqM)'] !== null ? Autolinker.link(String(feature.properties['Total Residential Bulk(SqM)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Comment'] !== null ? Autolinker.link(String(feature.properties['Comment'])) : '') + '</td>\
+                        <th scope="row">Comment</th>\
+                        <td>' + (feature.properties['Comment'] !== null ? Autolinker.link(String(feature.properties['Comment'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent);
